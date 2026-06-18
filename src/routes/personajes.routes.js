@@ -1,0 +1,15 @@
+//importar herramienta Router desde framework web express
+//siempre que se necesita utilizar una herramienta o recurso que está afuera del archivo en cuestión, se tiene que importar primero arriba de todo
+import express from 'express'
+import Router from 'express';
+
+//importamos el controlador
+import { getAllPj } from '../controllers/personajes.controllers.js';
+
+//guardamos en variable la herramienta en funcionamiento, es decir, inicializamos el enrutador
+const router = express.Router()
+
+//enrutamos el pedido de traer todos los pjs, combinando router con metodo http get, y pasandole como parametro al metodo la ruta "/personajes" y la funcion controladora getAllPj
+router.get("/personajes", getAllPj)
+
+export default router 
