@@ -4,7 +4,7 @@ import express from 'express'
 import Router from 'express';
 
 //importamos el controlador
-import { getAllPj, getPjById } from '../controllers/personajes.controllers.js';
+import { getAllPj, getPjById, createPj } from '../controllers/personajes.controllers.js';
 
 //guardamos en variable la herramienta en funcionamiento, es decir, inicializamos el enrutador
 const router = express.Router()
@@ -13,5 +13,6 @@ const router = express.Router()
 router.get("/personajes", getAllPj)
 //preparamos router con metodo get, parametros: parte estática de la URL (/personajes), parte dinámica de la url (/:id), y por ultimo invocacion a la función que trae pj por id
 router.get("/personajes/:id", getPjById)
+router.post("/personajes", createPj)
 
 export default router 
